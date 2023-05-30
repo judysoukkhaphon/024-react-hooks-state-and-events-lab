@@ -1,0 +1,52 @@
+# update state based on events; working with multiple state variables.
+# Using **state** and **events** to make app dynamic
+# using 'UseState' hook
+
+
+
+* Have to figure out component hierarchy yourself by looking at components, to figure out where data goes.
+
+1. in the pre-created button in 'App.js' which toggles between dark and light mode:
+    - use the 'useState' hook to create a state-variable in the App component to determine if the app should be in dark mode or light mode.
+    - add an event listener to the dark-mode-button and update state onClick
+    - App theme functionality is handled in CSS, so update 'ClassName' of the div to your state-variable
+
+2. In the 'Item' component:
+    - on button click, the item should be added to the virtual cart
+    - <li> should have className changed to show item.
+    - if item is-not in cart, the 'button' text should be "Add to Cart"
+    - if item -is- in cart, the 'button text should be "Remove from Cart"
+    - Need to add -state- to "Item" component
+
+3. In the "ShoppingList":
+    - use the 'useState' hook to create a state-variable called "selectedCategory" to keep track of selected values from the <select> element. 
+    - onChange <select> should update state.
+    - use the "selectedCategory" variable to determine which items to display in the shopping list. 
+    - Will have to find a way to filter the array based on "selectedCategory"
+
+
+
+-------------------------------------------
+To use "useState" with a component: 
+must import:
+
+>>import React, {useState} from "react";
+
+useState var to contain state syntax:
+>> stateVar =  useState(initialState)
+
+using "useState" inside of a component means you're creating some new internal state for that component.
+
+if: 
+const [count, setCount] = useState(0);
+
+then:
+ on useStaate() call, it will return a two variable array containing "count", "setCount".
+
+ see count value by calling {count}
+
+--------------------------------------------
+
+Getting form data from React Components is not like getting them from DOM elements.
+
+
